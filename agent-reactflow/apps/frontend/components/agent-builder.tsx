@@ -81,25 +81,25 @@ export default function WorkflowBuilder() {
     return () => clearTimeout(timer)
   }, [nodes.length, edges.length, applyLayout])
 
-  useEffect(() => {
-    const fetchAndValidateWorkflowTypes = async () => {
-      try {
-        const types = await getWorkflowTypes()
-        setWorkflowTypes(types)
-        const validationError = validateNodeIds(nodes, types)
-        if (validationError) {
-          console.error(validationError)
-        }
-      } catch (error) {
-        console.error("Error fetching or validating workflow types:", error)
-      }
-    }
+  // useEffect(() => {
+  //   const fetchAndValidateWorkflowTypes = async () => {
+  //     try {
+  //       const types = await getWorkflowTypes()
+  //       setWorkflowTypes(types)
+  //       const validationError = validateNodeIds(nodes, types)
+  //       if (validationError) {
+  //         console.error(validationError)
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching or validating workflow types:", error)
+  //     }
+  //   }
 
-    // Only fetch and validate if nodes have changed
-    if (nodes.length > 0) {
-      fetchAndValidateWorkflowTypes()
-    }
-  }, [nodes])
+  //   // Only fetch and validate if nodes have changed
+  //   if (nodes.length > 0) {
+  //     fetchAndValidateWorkflowTypes()
+  //   }
+  // }, [nodes])
 
   const onConnect = useCallback((params: Connection | Edge) => setEdges((eds) => addEdge(params, eds)), [setEdges])
 

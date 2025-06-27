@@ -21,7 +21,7 @@
     "@restackio/ai": "^0.0.124",
     "@restackio/react": "^0.10.3",
     "@xyflow/react": "^12.4.4",
-    "ai": "^4.2.5",
+    "ai": "^2.2.18",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "elkjs": "^0.10.0",
